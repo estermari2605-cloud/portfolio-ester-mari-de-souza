@@ -77,7 +77,7 @@ portfolio/
 ## Contato
 
 - GitHub: [@estermari2605-cloud](https://github.com/estermari2605-cloud)
-- LinkedIn: [linkedin.com/in/estermari](https://www.linkedin.com/in/estermari)
+- LinkedIn: [linkedin.com/in/estermari](https://www.linkedin.com/in/ester-mari)
 - E-mail: [estermari2605@gmail.com](mailto:estermari2605@gmail.com)
 
 ---
