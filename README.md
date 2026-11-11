@@ -74,27 +74,6 @@ portfolio/
 
 **Online:** acesse [estermari2605-cloud.github.io/portfolio](https://estermari2605-cloud.github.io/portfolio/).
 
-**No seu computador:**
-
-```bash
-git clone https://github.com/estermari2605-cloud/portfolio.git
-cd portfolio
-```
-
-Depois, abra o arquivo `index.html` no navegador. Não é preciso instalar nada. Bootstrap e as fontes são carregados por CDN, então é necessária conexão com a internet.
-
-## Como publicar no GitHub Pages
-
-1. Envie o conteúdo desta pasta para a raiz do repositório.
-2. Em **Settings → Pages**, escolha **Deploy from a branch**, branch `main` e pasta `/ (root)`.
-3. Aguarde alguns minutos e acesse o endereço indicado pelo GitHub.
-
-## Como adicionar um novo projeto
-
-1. Crie uma pasta em `projetos/` com o nome do projeto (sem acentos e sem espaços).
-2. Coloque nela os arquivos, com o principal chamado `index.html`.
-3. Adicione um card no `index.html` da raiz, apontando para `projetos/nome-do-projeto/index.html`.
-
 ## Contato
 
 - GitHub: [@estermari2605-cloud](https://github.com/estermari2605-cloud)
