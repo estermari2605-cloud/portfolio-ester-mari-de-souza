@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conexão Real: uma reflexão sobre comunicação digital, convivência e relações humanas.">
+  <meta name="theme-color" content="#51356F">
+
+  <title>Conexão Real | Menos telas. Mais presença.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Estilos próprios -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- MENU -->
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg" aria-label="Navegação principal">
+      <div class="container">
+        <a class="navbar-brand brand-logo" href="#inicio">conexão<span>real.</span></a>
+
+        <button class="navbar-toggler" type="button"
+          data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+          aria-controls="menuPrincipal" aria-expanded="false"
+          aria-label="Abrir menu de navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="#problema">O problema</a></li>
+            <li class="nav-item"><a class="nav-link" href="#equilibrio">Equilíbrio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#dados">Dados</a></li>
+            <li class="nav-item"><a class="nav-link" href="#experimente">Experimente</a></li>
+            <li class="nav-item"><a class="nav-link" href="#reflexao">Reflexão</a></li>
+            <li class="nav-item">
+              <!-- Rótulo fixo + aria-pressed: o JS deve alternar apenas aria-pressed, sem trocar o texto -->
+              <button id="themeToggle" class="theme-button" type="button" aria-pressed="false">
+                <span aria-hidden="true">☾</span> Modo escuro
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- INÍCIO -->
+    <section id="inicio" class="hero-section">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <span class="eyebrow">TECNOLOGIA E RELAÇÕES HUMANAS</span>
+
+            <h1>A gente está mais conectado. <span>Mas está mais próximo?</span></h1>
+
+            <p class="hero-description">
+              A tecnologia facilita a comunicação, mas as relações humanas
+              também precisam de presença, atenção e momentos compartilhados.
+            </p>
+
+            <div class="d-flex flex-wrap gap-3">
+              <a href="#problema" class="btn btn-main">Conheça o projeto</a>
+              <a href="#experimente" class="btn btn-outline-main">Experimente</a>
+            </div>
+
+            <p class="hero-note">Menos telas. Mais presença.</p>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="hero-image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1100&q=85"
+                alt="Grupo de amigos reunidos, conversando e compartilhando um momento juntos"
+                class="hero-image"
+                width="1100" height="733"
+                fetchpriority="high" decoding="async">
+              <div class="image-caption">
+                <span aria-hidden="true">♡</span> A conexão acontece quando estamos presentes.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 01 — O PROBLEMA -->
+    <section id="problema" class="section-space">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">01 — ENTENDA O CENÁRIO</span>
+          <h2>Estar conectado é o mesmo que estar presente?</h2>
+          <p>
+            Mensagens instantâneas, chamadas de vídeo e redes sociais fazem
+            parte da nossa rotina. Porém, a facilidade de se comunicar
+            digitalmente também traz desafios para a convivência.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-3">
+          <div class="col-md-6">
+            <article class="info-card positive-card h-100">
+              <div class="card-symbol" aria-hidden="true">✦</div>
+              <h3>O lado positivo da tecnologia</h3>
+              <ul>
+                <li>Facilita a comunicação entre pessoas distantes.</li>
+                <li>Oferece flexibilidade no trabalho e nos estudos.</li>
+                <li>Permite colaboração entre equipes de diferentes lugares.</li>
+                <li>Amplia o acesso à informação e ao conhecimento.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="col-md-6">
+            <article class="info-card challenge-card h-100">
+              <div class="card-symbol" aria-hidden="true">♡</div>
+              <h3>Os desafios das relações digitais</h3>
+              <ul>
+                <li>Distrações causadas por notificações constantes.</li>
+                <li>Menos oportunidades de convivência espontânea.</li>
+                <li>Dificuldades de comunicação em situações delicadas.</li>
+                <li>Possível sensação de isolamento e distanciamento.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 — EQUILÍBRIO -->
+    <section id="equilibrio" class="reflection-strip">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-5">
+            <span class="eyebrow">02 — EQUILÍBRIO</span>
+            <h2>Não precisamos escolher entre tecnologia e pessoas.</h2>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              O trabalho remoto e a comunicação digital podem trazer
+              benefícios importantes. A questão é encontrar equilíbrio:
+              aproveitar a praticidade das ferramentas digitais sem deixar
+              de valorizar a escuta, a colaboração e a convivência presencial.
+            </p>
+            <p>
+              Pesquisas recentes com jovens profissionais também apontam
+              que o contato presencial é valorizado por essa geração
+              (BSI, 2025; Gallup, 2025).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 — DADOS -->
+    <section id="dados" class="section-space">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">03 — O QUE DIZEM OS DADOS</span>
+          <h2>A solidão também aparece no ambiente de trabalho.</h2>
+          <p>
+            O relatório State of the Global Workplace 2024, da Gallup,
+            apresenta diferenças nos relatos de solidão conforme o modelo
+            de trabalho.
+          </p>
+        </div>
+
+        <div class="chart-card mt-4">
+          <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+            <div>
+              <h3>Relatos de solidão por modelo de trabalho</h3>
+              <p class="small-muted">Percentual de trabalhadores que sentiram solidão durante boa parte do dia anterior.</p>
+            </div>
+            <span class="source-tag">GALLUP · 2024</span>
+          </div>
+
+          <div class="chart-container">
+            <canvas id="lonelinessChart" role="img"
+              aria-label="Gráfico de barras mostrando 25 por cento no trabalho remoto, 21 por cento no híbrido e 16 por cento no presencial.">
+              Trabalho remoto: 25%. Híbrido: 21%. Presencial: 16%.
+            </canvas>
+          </div>
+
+          <table class="visually-hidden">
+            <caption>Relatos de solidão por modelo de trabalho (Gallup, 2024)</caption>
+            <thead>
+              <tr><th scope="col">Modelo de trabalho</th><th scope="col">Percentual</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Remoto</th><td>25%</td></tr>
+              <tr><th scope="row">Híbrido</th><td>21%</td></tr>
+              <tr><th scope="row">Presencial</th><td>16%</td></tr>
+            </tbody>
+          </table>
+
+          <p class="chart-note">
+            Fonte: Gallup, State of the Global Workplace 2024.
+            Os dados mostram uma associação entre modelo de trabalho e
+            relatos de solidão, mas não demonstram que o modelo de trabalho
+            seja a causa.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 — EXPERIÊNCIA INTERATIVA -->
+    <section id="experimente" class="interactive-section section-space">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">04 — EXPERIMENTE</span>
+          <h2>Pequenas atitudes podem criar grandes conexões.</h2>
+          <p>
+            Escolha uma situação e descubra uma ideia simples para valorizar
+            os momentos presenciais.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-2">
+          <div class="col-lg-6">
+            <div class="tool-card h-100">
+              <span class="tool-number">01</span>
+              <h3>Gerador de conexões</h3>
+              <p>Escolha com quem deseja compartilhar um momento.</p>
+
+              <label for="activityType" class="form-label">Tipo de convivência</label>
+              <select id="activityType" class="form-select">
+                <option value="amigos">Amigos</option>
+                <option value="familia">Família</option>
+                <option value="colegas">Colegas de trabalho ou estudo</option>
+              </select>
+
+              <button id="generateActivity" type="button" class="btn btn-main mt-3">
+                Gerar uma ideia
+              </button>
+
+              <div id="activityResult" class="activity-result mt-3" role="status" aria-live="polite">
+                <p>Sua próxima conexão pode começar com uma conversa.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="tool-card h-100">
+              <span class="tool-number">02</span>
+              <h3>Reflexão sobre seus hábitos digitais</h3>
+              <p>Responda às perguntas e receba uma reflexão sobre sua rotina.</p>
+
+              <form id="habitsForm">
+                <div class="mb-3">
+                  <label for="q1" class="form-label">
+                    1. Com que frequência você olha o celular durante uma conversa?
+                  </label>
+                  <select id="q1" class="form-select" required>
+                    <option value="">Selecione uma resposta</option>
+                    <option value="0">Raramente</option>
+                    <option value="1">Às vezes</option>
+                    <option value="2">Frequentemente</option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <label for="q2" class="form-label">
+                    2. Você sente dificuldade de ficar longe das notificações?
+                  </label>
+                  <select id="q2" class="form-select" required>
+                    <option value="">Selecione uma resposta</option>
+                    <option value="0">Raramente</option>
+                    <option value="1">Às vezes</option>
+                    <option value="2">Frequentemente</option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <label for="q3" class="form-label">
+                    3. Você interrompe momentos presenciais para responder mensagens?
+                  </label>
+                  <select id="q3" class="form-select" required>
+                    <option value="">Selecione uma resposta</option>
+                    <option value="0">Raramente</option>
+                    <option value="1">Às vezes</option>
+                    <option value="2">Frequentemente</option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <label for="q4" class="form-label">
+                    4. Você sente que passa mais tempo nas telas do que gostaria?
+                  </label>
+                  <select id="q4" class="form-select" required>
+                    <option value="">Selecione uma resposta</option>
+                    <option value="0">Raramente</option>
+                    <option value="1">Às vezes</option>
+                    <option value="2">Frequentemente</option>
+                  </select>
+                </div>
+
+                <button type="submit" class="btn btn-main w-100">
+                  Ver minha reflexão
+                </button>
+              </form>
+
+              <div id="quizResult" class="quiz-result mt-3" role="status" aria-live="polite">
+                <p>Suas respostas ajudarão a iniciar uma reflexão sobre seus hábitos.</p>
+              </div>
+
+              <p class="small-muted mt-2 mb-0">
+                Este questionário é educativo e não representa avaliação
+                ou diagnóstico psicológico.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 — REFLEXÃO -->
+    <section id="reflexao" class="section-space">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-5">
+            <span class="eyebrow">05 — REFLEXÃO</span>
+            <h2>Que espaço as relações humanas ocupam na sua rotina?</h2>
+            <p>
+              A conexão real não depende de abandonar a tecnologia.
+              Ela começa quando usamos nossos recursos digitais com
+              consciência e reservamos espaço para estar com outras pessoas.
+            </p>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="accordion" id="reflectionAccordion">
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button" type="button" id="headingOne"
+                    data-bs-toggle="collapse" data-bs-target="#answerOne"
+                    aria-expanded="true" aria-controls="answerOne">
+                    Como aproveitar melhor uma conversa presencial?
+                  </button>
+                </h3>
+                <div id="answerOne" class="accordion-collapse collapse show"
+                  role="region" aria-labelledby="headingOne"
+                  data-bs-parent="#reflectionAccordion">
+                  <div class="accordion-body">
+                    Escutar com atenção, evitar interrupções e demonstrar
+                    interesse pelo que a outra pessoa está compartilhando.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" id="headingTwo"
+                    data-bs-toggle="collapse" data-bs-target="#answerTwo"
+                    aria-expanded="false" aria-controls="answerTwo">
+                    É necessário deixar de usar a tecnologia?
+                  </button>
+                </h3>
+                <div id="answerTwo" class="accordion-collapse collapse"
+                  role="region" aria-labelledby="headingTwo"
+                  data-bs-parent="#reflectionAccordion">
+                  <div class="accordion-body">
+                    Não. O objetivo é utilizar a tecnologia de forma
+                    equilibrada, reconhecendo também o valor do contato humano.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" id="headingThree"
+                    data-bs-toggle="collapse" data-bs-target="#answerThree"
+                    aria-expanded="false" aria-controls="answerThree">
+                    Por que o contato presencial é importante?
+                  </button>
+                </h3>
+                <div id="answerThree" class="accordion-collapse collapse"
+                  role="region" aria-labelledby="headingThree"
+                  data-bs-parent="#reflectionAccordion">
+                  <div class="accordion-body">
+                    Ele oferece oportunidades de interação direta,
+                    observação de expressões, escuta e construção de vínculos.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSÃO -->
+    <section class="final-section">
+      <div class="container text-center">
+        <span class="eyebrow">CONEXÃO REAL</span>
+        <h2>Às vezes, tudo o que precisamos é estar presentes.</h2>
+        <p>
+          Mais atenção nas conversas. Mais tempo compartilhado.
+          Mais espaço para as relações humanas.
+        </p>
+        <a href="#inicio" class="btn btn-light">Voltar ao início <span aria-hidden="true">↑</span></a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <a class="footer-brand" href="#inicio">conexão<span>real.</span></a>
+          <p>Menos telas. Mais presença.</p>
+          <p class="small-muted">Projeto acadêmico sobre tecnologia e relações humanas.</p>
+        </div>
+
+        <div class="col-md-6">
+          <h2 class="h5">Referências</h2>
+          <ul class="reference-list">
+            <li>
+              GALLUP. <em>State of the Global Workplace: 2024 Report.</em> 2024.
+              <a href="https://www.gallup.com/file/workplace/349484/state-of-the-global-workplace-2024-download.pdf" target="_blank" rel="noopener noreferrer">Consultar relatório</a>.
+            </li>
+            <li>
+              BSI. <em>Global Workforce Entrants Study.</em> 2025.
+              <a href="https://www.bsigroup.com/en-US/insights-and-media/media-center/press-releases/2025/april/pandemics-impact-young-workers-value-in-person-connections-bsi-finds/" target="_blank" rel="noopener noreferrer">Consultar pesquisa</a>.
+            </li>
+            <li>
+              GALLUP. <em>Fully Remote Work Least Popular With Gen Z.</em> 2025.
+              <a href="https://www.gallup.com/workplace/692675/fully-remote-work-least-popular-gen-z.aspx" target="_blank" rel="noopener noreferrer">Consultar pesquisa</a>.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="currentYear">2026</span> Conexão Real.</span>
+        <span>Desenvolvido como projeto acadêmico.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bibliotecas -->
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script defer src="js/app.js"></script>
+</body>
+</html>

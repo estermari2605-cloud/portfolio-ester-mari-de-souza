@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de IMC</title>
+  <meta name="description" content="Calcule seu Índice de Massa Corporal e veja a classificação.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <a class="voltar" href="../../index.html">&larr; Voltar ao portfólio</a>
+  </header>
+
+  <main class="layout">
+    <section class="intro" aria-labelledby="titulo">
+      <h1 id="titulo">Calculadora de IMC</h1>
+      <p>O Índice de Massa Corporal relaciona seu peso e sua altura. Ele é um indicador de triagem: não substitui a avaliação de um profissional de saúde.</p>
+      <p class="formula">IMC = peso ÷ (altura × altura)</p>
+    </section>
+
+    <section class="painel" aria-label="Calculadora">
+      <form id="form-imc" novalidate>
+        <div class="campo">
+          <label for="peso">Peso (kg)</label>
+          <input id="peso" type="text" inputmode="decimal" placeholder="Ex.: 68,5" autocomplete="off" aria-describedby="erro-peso">
+          <p class="erro" id="erro-peso" role="alert"></p>
+        </div>
+        <div class="campo">
+          <label for="altura">Altura (m)</label>
+          <input id="altura" type="text" inputmode="decimal" placeholder="Ex.: 1,65" autocomplete="off" aria-describedby="erro-altura">
+          <p class="erro" id="erro-altura" role="alert"></p>
+        </div>
+        <div class="botoes">
+          <button type="submit" class="btn primario">Calcular IMC</button>
+          <button type="button" class="btn secundario" id="limpar">Limpar</button>
+        </div>
+      </form>
+
+      <div id="resultado" class="resultado" hidden aria-live="polite">
+        <p class="rotulo">Seu IMC</p>
+        <p class="valor" id="valor">0,0</p>
+        <p class="classe" id="classe"></p>
+        <div class="escala" aria-hidden="true">
+          <span style="--c:#38bdf8"></span><span style="--c:#34d399"></span><span style="--c:#fbbf24"></span><span style="--c:#fb923c"></span><span style="--c:#ef4444"></span><span style="--c:#991b1b"></span>
+          <i id="marcador"></i>
+        </div>
+        <p class="dica" id="dica"></p>
+      </div>
+    </section>
+
+    <section class="tabela" aria-labelledby="t-tab">
+      <h2 id="t-tab">Classificação</h2>
+      <table>
+        <thead><tr><th scope="col">IMC (kg/m²)</th><th scope="col">Classificação</th></tr></thead>
+        <tbody>
+          <tr data-faixa="0"><td>Menor que 18,5</td><td>Baixo peso</td></tr>
+          <tr data-faixa="1"><td>18,5 a 24,9</td><td>Peso normal</td></tr>
+          <tr data-faixa="2"><td>25 a 29,9</td><td>Sobrepeso</td></tr>
+          <tr data-faixa="3"><td>30 a 34,9</td><td>Obesidade grau I</td></tr>
+          <tr data-faixa="4"><td>35 a 39,9</td><td>Obesidade grau II</td></tr>
+          <tr data-faixa="5"><td>40 ou mais</td><td>Obesidade grau III</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="rodape">Projeto acadêmico · Ester Mari · Engenharia de Software</footer>
+  <script src="script.js"></script>
+</body>
+</html>

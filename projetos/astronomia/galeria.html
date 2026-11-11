@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galeria espacial · Astronomia e Exploração Espacial</title>
+  <meta name="description" content="Galeria com o Sol e os oito planetas do sistema solar.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="visually-hidden-focusable skip" href="#conteudo">Pular para o conteúdo</a>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" aria-label="Navegação principal">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Cosmos</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu de navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto"><li class="nav-item"><a class="nav-link" href="index.html">Início</a></li><li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li><li class="nav-item"><a class="nav-link active" aria-current="page" href="galeria.html">Galeria</a></li><li class="nav-item"><a class="nav-link" href="dados.html">Dados</a></li><li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+            <li class="nav-item"><a class="nav-link nav-portfolio" href="../../index.html">← Portfólio</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main id="conteudo">
+    <section class="page-head" style="--hero-img:url('img/sistema-solar.svg')">
+      <div class="container"><h1>Galeria espacial</h1><p class="lead">O Sol e os oito planetas do sistema solar. Toque em “Saiba mais” para ver detalhes.</p></div>
+    </section>
+
+    <section class="py-5" aria-label="Galeria de astros">
+      <div class="container"><div class="row g-4"><div class="col-12 col-sm-6 col-lg-4"><article class="card h-100"><img src="img/sol.svg" class="card-img-top" alt="Ilustração de Sol" width="400" height="400" loading="lazy"><div class="card-body d-flex flex-column"><h2 class="h4 card-title">Sol</h2><p class="card-text">A estrela do nosso sistema, responsável por mais de 99% da massa do sistema solar.</p><button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modal-sol" aria-label="Mais informações sobre Sol">Saiba mais</button></div></article></div><div class="col-12 col-sm-6 col-lg-4"><article class="card h-100"><img src="img/mercurio.svg" class="card-img-top" alt="Ilustração de Mercúrio" width="400" height="400" loading="lazy"><div class="card-body d-flex flex-column"><h2 class="h4 card-title">Mercúrio</h2><p class="card-text">O menor planeta e o mais próximo do Sol, com enormes variações de temperatura.</p><button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modal-mercurio" aria-label="Mais informações sobre Mercúrio">Saiba mais</button></div></article></div><div class="col-12 col-sm-6 col-lg-4"><article class="card h-100"><img src="img/venus.svg" class="card-img-top" alt="Ilustração de Vênus" width="400" height="400" loading="lazy"><div class="card-body d-flex flex-column"><h2 class="h4 card-title">Vênus</h2><p class="card-text">O planeta mais quente, coberto por nuvens densas de dióxido de carbono e ácido sulfúrico.</p><button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modal-venus" aria-label="Mais informações sobre Vênus">Saiba mais</button></div></article></div><div class="col-12 col-sm-6 col-lg-4"><article class="card h-100"><img src="img/terra.svg" class="card-img-top" alt="Ilustração de Terra" width="400" height="400" loading="lazy"><div class="card-body d-flex flex-column"><h2 class="h4 card-title">Terra</h2><p class="card-text">O único mundo conhecido que abriga vida, com água líquida na superfície.</p><button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modal-terra" aria-label="Mais informações sobre Terra">Saiba mais</button></div></article></div><div class="col-12 col-sm-6 col-lg-4"><article class="card h-100"><img src="img/marte.svg" class="card-img-top" alt="Ilustração de Marte" width="400" height="400" loading="lazy"><div class="card-body d-flex flex-column"><h2 class="h4 card-title">Marte</h2><p class="card-text">O planeta vermelho, alvo de várias missões em busca de sinais de água e vida passada.</p><button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modal-marte" aria-label="Mais informações sobre Marte">Saiba mais</button></div></article></div><div class="col-12 col-sm-6 col-lg-4"><article class="card h-100"><img src="img/jupiter.svg" class="card-img-top" alt="Ilustração de Júpiter" width="400" height="400" loading="lazy"><div class="card-body d-flex flex-column"><h2 class="h4 card-title">Júpiter</h2><p class="card-text">O maior planeta, um gigante gasoso com a famosa Grande Mancha Vermelha.</p><button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modal-jupiter" aria-label="Mais informações sobre Júpiter">Saiba mais</button></div></article></div><div class="col-12 col-sm-6 col-lg-4"><article class="card h-100"><img src="img/saturno.svg" class="card-img-top" alt="Ilustração de Saturno" width="400" height="400" loading="lazy"><div class="card-body d-flex flex-column"><h2 class="h4 card-title">Saturno</h2><p class="card-text">Famoso pelos anéis feitos de gelo e rocha, é menos denso que a água.</p><button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modal-saturno" aria-label="Mais informações sobre Saturno">Saiba mais</button></div></article></div><div class="col-12 col-sm-6 col-lg-4"><article class="card h-100"><img src="img/urano.svg" class="card-img-top" alt="Ilustração de Urano" width="400" height="400" loading="lazy"><div class="card-body d-flex flex-column"><h2 class="h4 card-title">Urano</h2><p class="card-text">Um gigante de gelo que gira praticamente “deitado” em relação à sua órbita.</p><button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modal-urano" aria-label="Mais informações sobre Urano">Saiba mais</button></div></article></div><div class="col-12 col-sm-6 col-lg-4"><article class="card h-100"><img src="img/netuno.svg" class="card-img-top" alt="Ilustração de Netuno" width="400" height="400" loading="lazy"><div class="card-body d-flex flex-column"><h2 class="h4 card-title">Netuno</h2><p class="card-text">O planeta mais distante do Sol, com ventos supersônicos e cor azul intensa.</p><button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modal-netuno" aria-label="Mais informações sobre Netuno">Saiba mais</button></div></article></div></div></div>
+    </section>
+  </main>
+
+  <div class="modal fade" id="modal-sol" tabindex="-1" aria-labelledby="titulo-sol" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header"><h2 class="modal-title h4" id="titulo-sol">Sol</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button></div>
+        <div class="modal-body"><img src="img/sol.svg" class="img-fluid rounded-3 mb-3" alt="Ilustração de Sol" loading="lazy"><p>A estrela do nosso sistema, responsável por mais de 99% da massa do sistema solar.</p><ul><li>Diâmetro: 1.392.700 km</li><li>Tipo: anã amarela</li><li>Temperatura na superfície: cerca de 5.500 °C</li><li>Composição: hidrogênio e hélio</li></ul></div>
+        <div class="modal-footer"><a class="btn btn-outline-light" href="dados.html">Ver tabela comparativa</a><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modal-mercurio" tabindex="-1" aria-labelledby="titulo-mercurio" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header"><h2 class="modal-title h4" id="titulo-mercurio">Mercúrio</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button></div>
+        <div class="modal-body"><img src="img/mercurio.svg" class="img-fluid rounded-3 mb-3" alt="Ilustração de Mercúrio" loading="lazy"><p>O menor planeta e o mais próximo do Sol, com enormes variações de temperatura.</p><ul><li>Diâmetro: 4.879 km</li><li>Distância média do Sol: 57,9 milhões de km</li><li>Translação: 88 dias</li><li>Sem satélites naturais</li><li>Temperatura: de −180 °C a 430 °C</li><li>Um dia solar dura cerca de 176 dias terrestres</li></ul></div>
+        <div class="modal-footer"><a class="btn btn-outline-light" href="dados.html">Ver tabela comparativa</a><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modal-venus" tabindex="-1" aria-labelledby="titulo-venus" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header"><h2 class="modal-title h4" id="titulo-venus">Vênus</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button></div>
+        <div class="modal-body"><img src="img/venus.svg" class="img-fluid rounded-3 mb-3" alt="Ilustração de Vênus" loading="lazy"><p>O planeta mais quente, coberto por nuvens densas de dióxido de carbono e ácido sulfúrico.</p><ul><li>Diâmetro: 12.104 km</li><li>Distância média do Sol: 108,2 milhões de km</li><li>Translação: 224,7 dias</li><li>Sem satélites naturais</li><li>Temperatura média: cerca de 465 °C</li><li>Gira no sentido contrário ao da maioria dos planetas</li></ul></div>
+        <div class="modal-footer"><a class="btn btn-outline-light" href="dados.html">Ver tabela comparativa</a><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modal-terra" tabindex="-1" aria-labelledby="titulo-terra" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header"><h2 class="modal-title h4" id="titulo-terra">Terra</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button></div>
+        <div class="modal-body"><img src="img/terra.svg" class="img-fluid rounded-3 mb-3" alt="Ilustração de Terra" loading="lazy"><p>O único mundo conhecido que abriga vida, com água líquida na superfície.</p><ul><li>Diâmetro: 12.742 km</li><li>Distância média do Sol: 149,6 milhões de km</li><li>Translação: 365,25 dias</li><li>1 satélite natural: a Lua</li><li>Temperatura média: cerca de 15 °C</li><li>Cerca de 71% da superfície é coberta por água</li></ul></div>
+        <div class="modal-footer"><a class="btn btn-outline-light" href="dados.html">Ver tabela comparativa</a><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modal-marte" tabindex="-1" aria-labelledby="titulo-marte" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header"><h2 class="modal-title h4" id="titulo-marte">Marte</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button></div>
+        <div class="modal-body"><img src="img/marte.svg" class="img-fluid rounded-3 mb-3" alt="Ilustração de Marte" loading="lazy"><p>O planeta vermelho, alvo de várias missões em busca de sinais de água e vida passada.</p><ul><li>Diâmetro: 6.779 km</li><li>Distância média do Sol: 227,9 milhões de km</li><li>Translação: 687 dias</li><li>2 luas: Fobos e Deimos</li><li>Temperatura média: cerca de −63 °C</li><li>Abriga o Monte Olimpo, o maior vulcão conhecido</li></ul></div>
+        <div class="modal-footer"><a class="btn btn-outline-light" href="dados.html">Ver tabela comparativa</a><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modal-jupiter" tabindex="-1" aria-labelledby="titulo-jupiter" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header"><h2 class="modal-title h4" id="titulo-jupiter">Júpiter</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button></div>
+        <div class="modal-body"><img src="img/jupiter.svg" class="img-fluid rounded-3 mb-3" alt="Ilustração de Júpiter" loading="lazy"><p>O maior planeta, um gigante gasoso com a famosa Grande Mancha Vermelha.</p><ul><li>Diâmetro: 139.820 km</li><li>Distância média do Sol: 778,5 milhões de km</li><li>Translação: 11,9 anos</li><li>Mais de 90 luas conhecidas</li><li>Composição: hidrogênio e hélio</li><li>A Grande Mancha Vermelha é uma tempestade com séculos de idade</li></ul></div>
+        <div class="modal-footer"><a class="btn btn-outline-light" href="dados.html">Ver tabela comparativa</a><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modal-saturno" tabindex="-1" aria-labelledby="titulo-saturno" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header"><h2 class="modal-title h4" id="titulo-saturno">Saturno</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button></div>
+        <div class="modal-body"><img src="img/saturno.svg" class="img-fluid rounded-3 mb-3" alt="Ilustração de Saturno" loading="lazy"><p>Famoso pelos anéis feitos de gelo e rocha, é menos denso que a água.</p><ul><li>Diâmetro: 116.460 km</li><li>Distância média do Sol: 1.434 milhões de km</li><li>Translação: 29,5 anos</li><li>Mais de 140 luas conhecidas</li><li>Maior lua: Titã, com atmosfera densa</li><li>Os anéis têm milhares de quilômetros de largura, mas poucos metros de espessura</li></ul></div>
+        <div class="modal-footer"><a class="btn btn-outline-light" href="dados.html">Ver tabela comparativa</a><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modal-urano" tabindex="-1" aria-labelledby="titulo-urano" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header"><h2 class="modal-title h4" id="titulo-urano">Urano</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button></div>
+        <div class="modal-body"><img src="img/urano.svg" class="img-fluid rounded-3 mb-3" alt="Ilustração de Urano" loading="lazy"><p>Um gigante de gelo que gira praticamente “deitado” em relação à sua órbita.</p><ul><li>Diâmetro: 50.724 km</li><li>Distância média do Sol: 2.871 milhões de km</li><li>Translação: 84 anos</li><li>28 luas conhecidas</li><li>Temperatura mínima: cerca de −224 °C</li><li>Inclinação do eixo: cerca de 98°</li></ul></div>
+        <div class="modal-footer"><a class="btn btn-outline-light" href="dados.html">Ver tabela comparativa</a><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modal-netuno" tabindex="-1" aria-labelledby="titulo-netuno" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header"><h2 class="modal-title h4" id="titulo-netuno">Netuno</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button></div>
+        <div class="modal-body"><img src="img/netuno.svg" class="img-fluid rounded-3 mb-3" alt="Ilustração de Netuno" loading="lazy"><p>O planeta mais distante do Sol, com ventos supersônicos e cor azul intensa.</p><ul><li>Diâmetro: 49.244 km</li><li>Distância média do Sol: 4.495 milhões de km</li><li>Translação: 164,8 anos</li><li>16 luas conhecidas</li><li>Maior lua: Tritão, que orbita em sentido contrário</li><li>Foi descoberto em 1846 por cálculos matemáticos</li></ul></div>
+        <div class="modal-footer"><a class="btn btn-outline-light" href="dados.html">Ver tabela comparativa</a><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button></div>
+      </div>
+    </div>
+  </div>
+  <footer class="rodape" role="contentinfo">
+    <div class="container py-4 d-flex flex-column flex-md-row justify-content-between gap-2">
+      <p class="mb-0">Astronomia e Exploração Espacial · projeto acadêmico de Ester Mari</p>
+      <p class="mb-0"><a href="../../index.html">Voltar ao portfólio</a></p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

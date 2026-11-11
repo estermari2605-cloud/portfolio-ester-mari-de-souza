@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projeto ERP · Personal Pisos</title>
+  <meta name="description" content="Projeto acadêmico de ERP e modelagem de banco de dados para a empresa Personal Pisos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .doc{max-width:820px;margin:0 auto;padding:2rem 1.25rem 4rem}
+    .doc h2{margin:2.5rem 0 1rem;font-size:1.6rem}
+    .doc h3{margin:1.5rem 0 .5rem}
+    .doc ul{padding-left:1.2rem}
+    .doc li{margin-bottom:.4rem}
+    .doc hr{border:0;border-top:1px solid var(--linha);margin:2rem 0}
+    .doc img{max-width:100%;height:auto;border:1px solid var(--linha);border-radius:12px;background:#fff}
+    .doc figure{margin:1.5rem 0} .doc figcaption{color:var(--muted);font-size:.9rem;margin-top:.4rem}
+    .tabela-rolavel{overflow-x:auto}
+    .doc table{border-collapse:collapse;width:100%;font-size:.95rem}
+    .doc th,.doc td{border:1px solid var(--linha);padding:.5rem .7rem;text-align:left;vertical-align:top}
+    .doc th{background:var(--alt)}
+    .topo-doc{padding:1.25rem} .topo-doc a{color:var(--azul-esc);font-weight:600}
+    .docs-links{display:flex;gap:.75rem;flex-wrap:wrap;margin:1rem 0 0}
+  </style>
+</head>
+<body>
+  <header class="topo-doc"><a href="../../index.html">&larr; Voltar ao portfólio</a></header>
+  <main class="doc">
+    <h1>Projeto ERP — Personal Pisos</h1>
+    <p>Trabalho acadêmico de levantamento de processos, requisitos e modelagem de banco de dados para uma empresa de pisos e decoração.</p>
+    <div class="docs-links">
+      <a class="btn cheio" href="docs/relatorio-abnt.pdf" target="_blank" rel="noopener">Relatório final (PDF)</a>
+      <a class="btn vazio" href="docs/modelagem-banco-de-dados.pdf" target="_blank" rel="noopener">Slides da modelagem (PDF)</a>
+    </div>
+    <hr>
+    
+<h2>1. Caracterização da empresa</h2>
+<ul>
+<li><strong>Nome:</strong> Personal Pisos</li>
+<li><strong>Segmento:</strong> Design de Interiores e Acabamentos.</li>
+<li><strong>O que vende:</strong> Soluções completas para ambientação, indo desde revestimentos de piso (vinílicos, laminados, porcelanatos) e proteção solar (persianas, cortinas sob medida) até elementos de decoração geral (papel de parede, tapetes, painéis).</li>
+<li><strong>Principais Clientes:</strong> Pessoas físicas reformando ou construindo a casa própria, arquitetos/designers de interiores parceiros e pequenos construtores.</li>
+<li><strong>Setores:</strong> Marketing, Vendas, Gerência, Finanças e Contabilidade, RH e Logística/Instalação.</li>
+<li><strong>Funcionamento Operacional:</strong> Modelo de negócio híbrido (digital e showroom físico).</li>
+<li><strong>Dados:</strong> Dados do Cliente, Dados Logísticos, Dados Técnicos e Dados Financeiros.</li>
+</ul>
+<hr />
+<h2>2. Justificativa da escolha</h2>
+<p>O grupo escolheu a empresa porque ela já possui um site que precisa de melhorias estruturais e da implementação de um banco de dados organizado para gerenciar suas informações. Além disso, há facilidade de acesso aos processos reais, pois uma das integrantes atua diretamente na empresa.</p>
+<hr />
+<h2>3. Identifique os processos de negócio.</h2>
+<p>Cliente -- Solicita orçamento -- Projeto -- Agendamento de visita -- Medição -- Compra de produtos -- Pagamento -- Entrega --Montagem/Instalação -- Atualização do estoque. </p>
+<ul>
+<li><strong>Quem participa?</strong>
+Cliente, vendedor, designer de interiores, montador e financeiro. </li>
+<li><strong>O que inicia o processo?</strong> 
+O cliente solicita um orçamento ou procura um produto específico. </li>
+<li><strong>O que acontece?</strong> 
+É realizado o orçamento, o projeto é definido e, quando necessário, é agendada uma visita para realizar a medição do ambiente. Após a aprovação, ocorre a compra dos produtos, o pagamento, a entrega e a montagem/instalação. </li>
+<li><strong>Que informação é gerada?</strong> 
+Orçamento, medidas do ambiente, pedido de venda, produtos vendidos, nota fiscal, comprovante de pagamento e atualização do estoque. </li>
+<li><strong>Qual é o resultado?</strong> 
+O ambiente do cliente é montado/instalado e a venda é concluída. </li>
+</ul>
+<hr />
+<h2>4. Identifique os problemas e necessidades</h2>
+<ul>
+<li><strong>Onde existe retrabalho?</strong><br />
+Nas obras, quando acontece algum problema em uma instalação ou serviço que não foi considerado a possibilidade durante a visita técnica realizada pré obra; 
+Na administração ou venda quando não foram seguidos todos os processos necessários. </li>
+<li><strong>Existem informações duplicadas?</strong>
+Poucas, mas existem, pois a loja está reestruturando o sistema. </li>
+<li><strong>Existem informações perdidas?</strong>
+Às vezes, por isso a loja está modernizando o sistema. </li>
+<li><strong>A empresa utiliza planilhas?</strong>
+Sim, ela utiliza. </li>
+<li><strong>Existem controles manuais?</strong>
+Poucos, a empresa investiu mais nos sistemas de ERP e planilhas e agora está modernizando o sistema. </li>
+<li><strong>Os setores compartilham informações?</strong>
+Sim, compartilham. </li>
+<li><strong>É difícil encontrar informações?</strong>
+De acordo com as informações passadas pelo dono não é. </li>
+<li><strong>Existem erros de cadastro?</strong>
+Raramente. </li>
+<li><strong>É difícil acompanhar estoque, vendas, clientes ou funcionários?</strong>
+Não, desde que esteja tudo devidamente cadastrado. Porém hoje o estoque é algo que dá um pouco mais de trabalho pois a empresa não possui um colaborador específico para organizar/catalogar. </li>
+<li><strong>Existem problemas para gerar relatórios?</strong>
+Não. </li>
+<li><strong>PROBLEMAS E NECESSIDADES</strong></li>
+<li><strong>Problema</strong>: Problemas não identificados durante a visita técnica pré-obra. </li>
+<li>
+<p><strong>Consequência</strong>: Retrabalho durante a instalação ou execução do serviço; </p>
+</li>
+<li>
+<p><strong>Problema</strong>: Processos de administração ou venda não seguidos corretamente. </p>
+</li>
+<li>
+<p><strong>Consequência</strong>: Retrabalho e possíveis atrasos nos processos; </p>
+</li>
+<li>
+<p><strong>Problema</strong>: Informações duplicadas durante a reestruturação do sistema. </p>
+</li>
+<li>
+<p><strong>Consequência</strong>: Necessidade de reorganização e conferência dos dados; </p>
+</li>
+<li>
+<p><strong>Problema</strong>: Possibilidade de perda de informações. </p>
+</li>
+<li>
+<p><strong>Consequência:</strong> Dificuldade para manter todos os dados organizados e disponíveis; </p>
+</li>
+<li>
+<p><strong>Problema</strong>: Uso de planilhas junto aos sistemas. </p>
+</li>
+<li>
+<p><strong>Consequência</strong>: Necessidade de modernização e integração dos controles; </p>
+</li>
+<li>
+<p><strong>Problema</strong>: Controle de estoque sem colaborador específico. </p>
+</li>
+<li>
+<p><strong>Consequência</strong>: Maior dificuldade e trabalho para acompanhar o estoque; </p>
+</li>
+<li>
+<p><strong>Problema</strong>: Informações dependentes de cadastro correto. </p>
+</li>
+<li><strong>Consequência</strong>: Possibilidade de dificuldades no acompanhamento quando há falhas no cadastro.</li>
+</ul>
+<hr />
+<h2>5. Requisitos funcionais</h2>
+<ul>
+<li>
+<p><strong>RF1</strong> - Cadastro com os dados pessoais do cliente, como e-mail pessoal, número de celular, nome completo, CPF ou CNPJ, data de nascimento e CEP, juntamente com a verificação em dois fatores durante a autenticação.</p>
+</li>
+<li>
+<p><strong>RF2</strong> - Todo projeto realizado deve ter a emissão de um relatório contendo informações desde o planejamento até a instalação, incluindo materiais utilizados, custos e etapas concluídas.</p>
+</li>
+<li>
+<p><strong>RF3</strong> - O sistema deve disponibilizar um canal de contato entre cliente e atendente para dúvidas e solicitações de alterações referentes ao projeto, mantendo o histórico das conversas.</p>
+</li>
+<li>
+<p><strong>RF4</strong> - O sistema deve permitir o controle da entrada e saída de produtos do estoque, registrando as quantidades movimentadas e os respectivos valores financeiros.</p>
+</li>
+<li>
+<p><strong>RF5</strong> - O sistema deve permitir que o atendente crie orçamentos prévios de serviços para os clientes, informando o período previsto de execução, os itens desejados, os valores e um prazo de validade configurável (ex.: 7 dias).</p>
+</li>
+<li>
+<p><strong>RF6</strong> - O sistema deve registrar o estilo de decoração desejado pelo cliente, incluindo preferências de cores, materiais e acabamentos, para auxiliar na elaboração do projeto e do orçamento.</p>
+</li>
+<li>
+<p><strong>RF7</strong> - O sistema deve registrar todas as etapas do processo, desde a compra dos materiais com os fornecedores até a instalação dos produtos no ambiente do cliente.</p>
+</li>
+<li>
+<p><strong>RF8</strong> - O sistema deve permitir o cadastro e a atualização da disponibilidade comercial dos produtos, indicando quais podem ou não ser vendidos, independentemente da quantidade física disponível em estoque.</p>
+</li>
+<li>
+<p><strong>RF9</strong> - Toda alteração no status de um projeto deve ser registrada no sistema, incluindo a data da alteração, o status e o usuário responsável, utilizando estados previamente definidos, como em planejamento, em execução, aguardando aprovação ou concluído.</p>
+</li>
+<li>
+<p><strong>RF10</strong> - A aprovação de um projeto pelo cliente deve ser registrada com a data da aprovação, a identificação do cliente responsável e a versão do projeto aprovada.</p>
+</li>
+<li>
+<p><strong>RF11</strong> - O sistema deve permitir o cadastro de fornecedores, armazenando informações como nome, CPF ou CNPJ, telefone, endereço e materiais fornecidos.</p>
+</li>
+<li>
+<p><strong>RF12</strong> - O sistema deve permitir o registro e o acompanhamento dos pagamentos relacionados aos projetos, incluindo valores pagos, valores pendentes, datas de pagamento e situação financeira de cada pedido.</p>
+</li>
+<li>
+<p><strong>RF13</strong> - O sistema deve permitir o agendamento de medições, visitas técnicas e instalações, registrando data, horário, endereço, profissional responsável e projeto relacionado.</p>
+</li>
+<li>
+<p><strong>RF14</strong> - O sistema deve permitir o cadastro e a atualização de produtos e materiais, armazenando informações como código identificador, descrição, categoria, unidade de medida, preço e fornecedor relacionado, quando aplicável.</p>
+</li>
+</ul>
+<h2>6. Requisitos não funcionais</h2>
+<ul>
+<li>
+<p><strong>RNF1</strong> – O sistema deve fazer backup dos dados todos os dias à 00:00 (meia noite) ou sempre que houver uma atualização. </p>
+</li>
+<li>
+<p><strong>RNF2</strong> - O sistema deve funcionar 24/7 (24 horas por dia durante 7 dias por semana). </p>
+</li>
+<li>
+<p><strong>RNF3</strong> - O sistema deve exigir autenticação por login e senha para permitir o acesso às funcionalidades restritas. </p>
+</li>
+<li>
+<p><strong>RNF4</strong> - O sistema deve controlar o acesso às informações de acordo com o perfil do usuário, como administrador, designer de interiores e funcionário. </p>
+</li>
+<li>
+<p><strong>RNF5</strong> - Os dados pessoais dos clientes devem ser protegidos de acordo com a Lei Geral de Proteção de Dados (LGPD). </p>
+</li>
+<li>
+<p><strong>RNF6</strong> - O sistema deve utilizar um banco de dados relacional para garantir a organização e a integridade das informações cadastradas. </p>
+</li>
+<li>
+<p><strong>RNF7</strong> - O sistema deve validar os dados inseridos nos formulários, impedindo o cadastro de informações em formatos inválidos. </p>
+</li>
+<li>
+<p><strong>RNF8</strong> - Os valores monetários devem ser armazenados e processados com precisão decimal, evitando erros de arredondamento nos cálculos financeiros. </p>
+</li>
+<li>
+<p><strong>RNF9</strong> - O sistema deve manter um padrão de nomenclatura para tabelas, campos e relacionamentos do banco de dados, facilitando sua manutenção. </p>
+</li>
+<li>
+<p><strong>RNF10</strong> - O código-fonte do sistema deve ser organizado e documentado para facilitar futuras correções e atualizações. </p>
+</li>
+<li>
+<p><strong>RNF11</strong> - O sistema deve registrar logs de erros e falhas técnicas para facilitar a identificação e a correção de problemas. </p>
+</li>
+<li>
+<p><strong>RNF12</strong> - O sistema deve permitir a manutenção e a atualização de seus componentes sem comprometer a integridade dos dados armazenados.</p>
+</li>
+</ul>
+<hr />
+<h2>7. Regras de negócio</h2>
+<ul>
+<li><strong>RN1:</strong> Um mesmo item não pode ser vendido para mais de um cliente.</li>
+<li><strong>RN2:</strong> Um sinal de 35% do valor total da compra deve ser pago à vista, e o restante pode ser parcelado em até 10x sem juros.</li>
+<li><strong>RN3:</strong> Calcular o valor total do pedido levando em consideração o material escolhido, a compra com o fornecedor para preenchimento do estoque, a quantidade de material que será usado (com base na medida feita) e a instalação.</li>
+<li><strong>RN4:</strong> Cancelamento em até 7 dias após o pagamento do sinal, caso contrário o valor pago não é devolvido e o cliente escolhe outro produto ou material se desejar.</li>
+<li><strong>RN5:</strong> Todo cliente deve possuir um cadastro único no sistema, contendo nome completo, CPF ou CNPJ, telefone, e-mail e endereço.</li>
+<li><strong>RN6:</strong> Cada projeto de design de interiores deve estar vinculado a um único cliente responsável pela contratação do serviço.</li>
+<li><strong>RN7:</strong>  Um cliente pode contratar vários projetos de design de interiores, mas cada projeto deve possuir um identificador único.</li>
+<li><strong>RN8:</strong> Todo projeto deve possuir uma data de início prevista e uma data de entrega prevista.</li>
+<li><strong>RN9:</strong> Cada ambiente deve possuir medidas registradas antes da definição dos materiais e móveis que serão utilizados no projeto.</li>
+<li><strong>RN10:</strong> Todo material cadastrado no banco de dados deve possuir código único, descrição e preço de custo.</li>
+<li><strong>RN11:</strong> A quantidade de materiais disponível em estoque deve ser atualizada sempre que houver entrada por compra ou saída para uso em um projeto.</li>
+<li><strong>RN12:</strong> Toda compra de materiais realizada pela empresa deve estar vinculada a um fornecedor já cadastrado no sistema.</li>
+<li><strong>RN13:</strong> Cada pedido de compra de materiais deve registrar a data da compra, os materiais adquiridos, suas quantidades e os respectivos valores unitários.</li>
+<li><strong>RN14:</strong> Todo serviço de instalação contratado deve estar vinculado a um projeto específico e possuir descrição, valor e prazo previsto para execução.</li>
+<li><strong>RN15:</strong> Cada funcionário ou profissional responsável por um projeto deve estar cadastrado no sistema e possuir uma função definida.</li>
+<li><strong>RN16:</strong> Um projeto pode ter vários profissionais responsáveis por diferentes atividades, mas cada atividade deve possuir um responsável definido.</li>
+<li><strong>RN17:</strong> Toda alteração no status de um projeto deve ser registrada no sistema, utilizando estados previamente definidos, como em planejamento, em execução, aguardando aprovação ou concluído.</li>
+<li><strong>RN18:</strong> A aprovação de um projeto pelo cliente deve ser registrada com a data da aprovação e a identificação do projeto correspondente.</li>
+<li><strong>RN19:</strong> Um mesmo item não pode estar em outro estoque ao mesmo tempo.</li>
+</ul>
+<hr />
+<h2>8. Identifique as restrições e políticas organizacionais</h2>
+<ul>
+<li>
+<p><strong>Quem pode aprovar uma operação?</strong>
+Apenas os Gerentes/Dono podem realizar operações. </p>
+</li>
+<li>
+<p><strong>Quem pode alterar determinado cadastro?</strong>
+Todos os cadastros podem ser editados pelos clientes, porém somente o gerente pode excluir as informações. </p>
+</li>
+<li>
+<p><strong>Limites de desconto?</strong>
+Toda compra possui um limite de 5 a 10% de desconto baseado no valor total da compra. </p>
+</li>
+<li>
+<p><strong>Condições de pagamento?</strong>
+É possível pagar à vista ou parcelado (sendo no parcelado necessário um sinal de 35% e o restante pode ser feito em até 10x sem juros). </p>
+</li>
+<li>
+<p><strong>Regras de cancelamento</strong>
+As regras de cancelamento seguem o Código de Defesa do Consumidor, sendo 7 dias para devolução total do valor gasto, caso já tenha havido algum valor gasto com compra de material, isso será negociado diretamente com o cliente. </p>
+</li>
+<li>
+<p><strong>Políticas de estoque</strong>
+O estoque é conferido uma vez por mês e é abastecido conforme a realização das vendas, pois a loja não trabalha com estoque de todos os produtos. </p>
+</li>
+<li>
+<p><strong>Regras de acesso às informações</strong>
+A loja segue a LGPD - Lei Geral de Proteção de Dados, ou seja, ela informa onde serão utilizados os dados dos clientes, coleta apenas as informações necessárias e possui medidas de segurança contra o vazamento de dados. </p>
+</li>
+<li>
+<p><strong>Existe alguma decisão da empresa que precisa ser respeitada pelo sistema?</strong>
+Sim, algumas coisas são permitidas apenas com autorização do gerente. Como: 
+<strong>Desconto maior que 5%;</strong>
+<strong>Exclusão de dados do sistema;</strong>
+<strong>Outros métodos de pagamento, como boleto.</strong></p>
+</li>
+</ul>
+<hr />
+<h2>9. Fluxograma dos principais processos</h2>
+<p><img alt="Fluxograma de Processos" src="img/fluxograma.png" /></p>
+<hr />
+<h2>10. Dicionário de dados conceitual</h2>
+<div class="tabela-rolavel"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Entidade</th>
+<th style="text-align: left;">Atributo</th>
+<th style="text-align: left;">Descrição</th>
+<th style="text-align: left;">Regra / Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Pessoa</strong></td>
+<td style="text-align: left;"><code>CPF</code></td>
+<td style="text-align: left;">Identificador único da pessoa</td>
+<td style="text-align: left;"><strong>PK</strong> - Obrigatório e único</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Pessoa</strong></td>
+<td style="text-align: left;"><code>Nome</code></td>
+<td style="text-align: left;">Nome completo</td>
+<td style="text-align: left;">Obrigatório</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Pessoa</strong></td>
+<td style="text-align: left;"><code>Email</code></td>
+<td style="text-align: left;">Correio eletrônico</td>
+<td style="text-align: left;">Formato de e-mail válido</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Pessoa</strong></td>
+<td style="text-align: left;"><code>Telefone</code></td>
+<td style="text-align: left;">Telefone de contato</td>
+<td style="text-align: left;">Obrigatório</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Pessoa</strong></td>
+<td style="text-align: left;"><code>Data_Nascimento</code></td>
+<td style="text-align: left;">Data de nascimento</td>
+<td style="text-align: left;">Formato Data</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cliente</strong></td>
+<td style="text-align: left;"><code>ID_Cliente</code></td>
+<td style="text-align: left;">Identificador do cliente</td>
+<td style="text-align: left;"><strong>PK</strong> - Auto incremento</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cliente</strong></td>
+<td style="text-align: left;"><code>Endereço</code></td>
+<td style="text-align: left;">Endereço completo para entrega</td>
+<td style="text-align: left;">Obrigatório</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cliente</strong></td>
+<td style="text-align: left;"><code>CPF</code></td>
+<td style="text-align: left;">CPF da pessoa associada</td>
+<td style="text-align: left;"><strong>FK</strong> referenciando <code>Pessoa(CPF)</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Funcionário</strong></td>
+<td style="text-align: left;"><code>ID_Funcionário</code></td>
+<td style="text-align: left;">Identificador do funcionário</td>
+<td style="text-align: left;"><strong>PK</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Funcionário</strong></td>
+<td style="text-align: left;"><code>Cargo</code></td>
+<td style="text-align: left;">Função na empresa</td>
+<td style="text-align: left;">Ex: Vendedor, Gerente</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Funcionário</strong></td>
+<td style="text-align: left;"><code>Setor</code></td>
+<td style="text-align: left;">Setor de atuação</td>
+<td style="text-align: left;">Ex: Vendas, Logística</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Funcionário</strong></td>
+<td style="text-align: left;"><code>CPF</code></td>
+<td style="text-align: left;">CPF da pessoa associada</td>
+<td style="text-align: left;"><strong>FK</strong> referenciando <code>Pessoa(CPF)</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Fornecedor</strong></td>
+<td style="text-align: left;"><code>ID_Fornecedor</code></td>
+<td style="text-align: left;">Identificador do fornecedor</td>
+<td style="text-align: left;"><strong>PK</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Fornecedor</strong></td>
+<td style="text-align: left;"><code>Matéria-Prima</code></td>
+<td style="text-align: left;">Descrição do insumo</td>
+<td style="text-align: left;">Texto</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Fornecedor</strong></td>
+<td style="text-align: left;"><code>Custo_Unitario</code></td>
+<td style="text-align: left;">Custo de aquisição do item</td>
+<td style="text-align: left;">Valor monetário</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Fornecedor</strong></td>
+<td style="text-align: left;"><code>CPF</code></td>
+<td style="text-align: left;">Documento do responsável/empresa</td>
+<td style="text-align: left;"><strong>FK</strong> referenciando <code>Pessoa(CPF)</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Compra</strong></td>
+<td style="text-align: left;"><code>ID_Compra</code></td>
+<td style="text-align: left;">Registro da ordem de compra</td>
+<td style="text-align: left;"><strong>PK</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Compra</strong></td>
+<td style="text-align: left;"><code>ID_Fornecedor</code></td>
+<td style="text-align: left;">Código do fornecedor</td>
+<td style="text-align: left;"><strong>FK</strong> referenciando <code>Fornecedor</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Compra</strong></td>
+<td style="text-align: left;"><code>Total_Gasto</code></td>
+<td style="text-align: left;">Valor gasto na compra</td>
+<td style="text-align: left;">Valor monetário</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Produto</strong></td>
+<td style="text-align: left;"><code>ID_Produto</code></td>
+<td style="text-align: left;">Código identificador do produto</td>
+<td style="text-align: left;"><strong>PK</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Produto</strong></td>
+<td style="text-align: left;"><code>Descrição</code></td>
+<td style="text-align: left;">Especificação técnica e nome</td>
+<td style="text-align: left;">Texto</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Produto</strong></td>
+<td style="text-align: left;"><code>Valor_Unitario</code></td>
+<td style="text-align: left;">Preço de venda ao consumidor</td>
+<td style="text-align: left;">Valor monetário</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Produto</strong></td>
+<td style="text-align: left;"><code>ID_Fornecedor</code></td>
+<td style="text-align: left;">Código do fornecedor</td>
+<td style="text-align: left;"><strong>FK</strong> referenciando <code>Fornecedor</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Estoque</strong></td>
+<td style="text-align: left;"><code>ID_Produto</code></td>
+<td style="text-align: left;">Código do produto em estoque</td>
+<td style="text-align: left;"><strong>FK</strong> referenciando <code>Produto</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Estoque</strong></td>
+<td style="text-align: left;"><code>Informação</code></td>
+<td style="text-align: left;">Detalhes do lote e armazenamento</td>
+<td style="text-align: left;">Texto</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Estoque</strong></td>
+<td style="text-align: left;"><code>Quantidade</code></td>
+<td style="text-align: left;">Unidades/m² em estoque</td>
+<td style="text-align: left;">Numérico inteiro/decimal</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Estoque</strong></td>
+<td style="text-align: left;"><code>Abastecimento</code></td>
+<td style="text-align: left;">Frequência de reposição</td>
+<td style="text-align: left;">Semanal ou Mensal</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Pedido</strong></td>
+<td style="text-align: left;"><code>ID_Pedido</code></td>
+<td style="text-align: left;">Identificador único do pedido</td>
+<td style="text-align: left;"><strong>PK</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Pedido</strong></td>
+<td style="text-align: left;"><code>ID_Cliente</code></td>
+<td style="text-align: left;">Código do cliente</td>
+<td style="text-align: left;"><strong>FK</strong> referenciando <code>Cliente</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Pedido</strong></td>
+<td style="text-align: left;"><code>ID_Funcionário</code></td>
+<td style="text-align: left;">Identificador do funcionário</td>
+<td style="text-align: left;"><strong>FK</strong> referenciando <code>Produto</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Pedido</strong></td>
+<td style="text-align: left;"><code>Data_Entrega</code></td>
+<td style="text-align: left;">Data prevista de entrega</td>
+<td style="text-align: left;">Formato Data</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Pedido</strong></td>
+<td style="text-align: left;"><code>Data_Visita</code></td>
+<td style="text-align: left;">Data prevista de instalação</td>
+<td style="text-align: left;">Formato Data</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Pedido</strong></td>
+<td style="text-align: left;"><code>Total_Recebido</code></td>
+<td style="text-align: left;">Valor final do pedido</td>
+<td style="text-align: left;">Valor monetário</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Pedido</strong></td>
+<td style="text-align: left;"><code>Pago</code></td>
+<td style="text-align: left;">quantia paga</td>
+<td style="text-align: left;">valor monetário</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Pedido</strong></td>
+<td style="text-align: left;"><code>Descrição_Projeto</code></td>
+<td style="text-align: left;">descrição do projeto</td>
+<td style="text-align: left;">inteiro obrigatório</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Pedido</strong></td>
+<td style="text-align: left;"><code>Acréscimos</code></td>
+<td style="text-align: left;">Custos extras (frete/mão de obra)</td>
+<td style="text-align: left;">Valor monetário</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Pedido</strong></td>
+<td style="text-align: left;"><code>Acréscimo_Motivo</code></td>
+<td style="text-align: left;">motivação</td>
+<td style="text-align: left;">caractere</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Realiza</strong></td>
+<td style="text-align: left;"><code>ID_Cliente</code></td>
+<td style="text-align: left;">Código do cliente</td>
+<td style="text-align: left;"><strong>FK</strong> referenciando <code>Cliente</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Realiza</strong></td>
+<td style="text-align: left;"><code>Código_Pedido</code></td>
+<td style="text-align: left;">Código do pedido</td>
+<td style="text-align: left;"><strong>FK</strong> referenciando <code>Pedido</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Realiza</strong></td>
+<td style="text-align: left;"><code>Subtotal</code></td>
+<td style="text-align: left;">Valor acumulado do cliente no pedido</td>
+<td style="text-align: left;">Atributo próprio do relacionamento</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Contém</strong></td>
+<td style="text-align: left;"><code>Código_Pedido</code></td>
+<td style="text-align: left;">Código do pedido</td>
+<td style="text-align: left;"><strong>FK</strong> referenciando <code>Pedido</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Contém</strong></td>
+<td style="text-align: left;"><code>Código_Produto</code></td>
+<td style="text-align: left;">Código do produto</td>
+<td style="text-align: left;"><strong>FK</strong> referenciando <code>Produto</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Contém</strong></td>
+<td style="text-align: left;"><code>Quantidade_De_Produtos</code></td>
+<td style="text-align: left;">Quantidade comprada do produto</td>
+<td style="text-align: left;">Numérico</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Movimentação</strong></td>
+<td style="text-align: left;"><code>ID_Movimentação</code></td>
+<td style="text-align: left;">Identificador único da movimentação</td>
+<td style="text-align: left;"><strong>PK</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Movimentação</strong></td>
+<td style="text-align: left;"><code>ID_Funcionário</code></td>
+<td style="text-align: left;">Identificador do funcionário</td>
+<td style="text-align: left;"><strong>FK</strong> referenciando <code>Produto</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Movimentação</strong></td>
+<td style="text-align: left;"><code>ID_Produto</code></td>
+<td style="text-align: left;">Código do produto em estoque</td>
+<td style="text-align: left;"><strong>FK</strong> referenciando <code>Produto</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Movimentação</strong></td>
+<td style="text-align: left;"><code>Data_Movimentação</code></td>
+<td style="text-align: left;">data da movimentação</td>
+<td style="text-align: left;">data</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Movimentação</strong></td>
+<td style="text-align: left;"><code>Quantidade_Abastecida</code></td>
+<td style="text-align: left;">quantidade abastecida</td>
+<td style="text-align: left;">inteiro obrigatório</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Financeiro</strong></td>
+<td style="text-align: left;"><code>ID_Transição</code></td>
+<td style="text-align: left;">Identificador único das transações</td>
+<td style="text-align: left;"><strong>PK</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Financeiro</strong></td>
+<td style="text-align: left;"><code>Dinheiro_Conta</code></td>
+<td style="text-align: left;">quantidade monetária em conta</td>
+<td style="text-align: left;">inteiro e obrigatório</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Financeiro</strong></td>
+<td style="text-align: left;"><code>Saída</code></td>
+<td style="text-align: left;">identificador das saídas</td>
+<td style="text-align: left;">inteiro</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Financeiro</strong></td>
+<td style="text-align: left;"><code>Entrada</code></td>
+<td style="text-align: left;">Identificador das entradas</td>
+<td style="text-align: left;">inteiro</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Financeiro</strong></td>
+<td style="text-align: left;"><code>Motivo</code></td>
+<td style="text-align: left;">motivação das transações</td>
+<td style="text-align: left;">caractere obrigatório</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>11. Entidades</h2>
+<p><code>Pessoa</code> – <code>Cliente</code> – <code>Funcionário</code> – <code>Fornecedor</code> – <code>Compra</code> – <code>Produto</code> – <code>Estoque</code> – <code>Pedido</code> – <code>Realiza</code> – <code>Contém</code>- <code>Financeiro</code>- <code>Movimentação</code></p>
+<hr />
+<h2>12. Atributos</h2>
+<ul>
+<li><strong>Pessoa:</strong> <code>Nome</code> – <code>Email</code> – <code>Telefone</code> – <code>Data_Nascimento</code> – <code>CPF (PK)</code></li>
+<li><strong>Cliente:</strong> <code>ID_Cliente (PK)</code> – <code>Endereço</code> – <code>CPF (FK)</code></li>
+<li><strong>Funcionário:</strong> <code>ID_Funcionário (PK)</code> – <code>Cargo</code> – <code>Salario</code> – <code>CPF (FK)</code> – <code>Setor</code></li>
+<li><strong>Fornecedor:</strong> <code>Código_Fornecedor (PK)</code> – <code>Matéria-Prima</code> – <code>Custo_Unitario</code> – <code>CPF (FK)</code></li>
+<li><strong>Compra:</strong> <code>ID_Compra (PK)</code> – <code>Código_Fornecedor (FK)</code> – <code>Total_Gasto</code></li>
+<li><strong>Produto:</strong> <code>Código_Produto (PK)</code> – <code>Descrição</code> – <code>Valor_Unitario</code></li>
+<li><strong>Estoque:</strong> <code>Código_Produto (PK/FK)</code> – <code>Informação</code> – <code>Quantidade_De_Cada_Produto</code> – <code>Abastecimento</code></li>
+<li><strong>Contém:</strong> <code>Código_Pedido (FK)</code> – <code>Código_Produto (FK)</code> – <code>Quantidade_De_Produtos</code></li>
+<li><strong>Pedido:</strong> <code>Código_Pedido (PK)</code> – <code>Data_De_Entrega</code> – <code>Pagamento_Total</code> – <code>Acréscimos</code></li>
+<li><strong>Realiza:</strong> <code>ID_Cliente (FK)</code> – <code>Código_Pedido (FK)</code> – <code>Subtotal</code></li>
+<li><strong>Financeiro</strong> <code>Motivo</code> - <code>Entrada</code> - <code>Saída</code> - <code>Dinheiro_conta</code> - <code>ID_transação (PK)</code></li>
+<li><strong>Movimentação</strong> <code>Quantidade_Abastecida</code> - <code>Data_Movimento</code> - <code>ID_Produto (FK)</code> - <code>ID_Funcionario (FK)</code> - <code>ID_Movimentação (PK)</code></li>
+</ul>
+<hr />
+<h2>13. Relacionamentos</h2>
+<ul>
+<li><strong>Pessoa – Cliente</strong></li>
+<li><strong>Entidades Relacionadas:</strong> Pessoa e Cliente</li>
+<li><strong>Tipo de Relacionamento:</strong> Especialização/Herança</li>
+<li><strong>Descrição:</strong> A entidade Cliente deriva da entidade genérica Pessoa</li>
+<li>
+<p><strong>Atributo de Ligação:</strong> <code>CPF</code> (Chave Primária em Pessoa e Chave Estrangeira em Cliente)</p>
+</li>
+<li>
+<p><strong>Pessoa – Funcionário</strong></p>
+</li>
+<li><strong>Entidades Relacionadas:</strong> Pessoa e Funcionário</li>
+<li><strong>Tipo de Relacionamento:</strong> Especialização/Herança</li>
+<li><strong>Descrição:</strong> A entidade Funcionário deriva da entidade genérica Pessoa</li>
+<li>
+<p><strong>Atributo de Ligação:</strong> <code>CPF</code> (Chave Primária em Pessoa e Chave Estrangeira em Funcionário)</p>
+</li>
+<li>
+<p><strong>Pessoa – Fornecedor</strong></p>
+</li>
+<li><strong>Entidades Relacionadas:</strong> Pessoa e Fornecedor</li>
+<li><strong>Tipo de Relacionamento:</strong> Associação/Especialização</li>
+<li><strong>Descrição:</strong> Vincula o cadastro de Fornecedor á pessoa física responsável </li>
+<li>
+<p><strong>Atributo de Ligação:</strong> <code>CPF</code> (Chave Primária em Pessoa e Chave Estrangeira em Fornecedor)</p>
+</li>
+<li>
+<p><strong>Cliente – Pedidos (via Tabela/Relacionamento "Realiza")</strong></p>
+</li>
+<li><strong>Entidades Relacionadas:</strong> Cliente e Pedido (ligadas através da entidade associativa Realiza)</li>
+<li><strong>Tipo de Relacionamento:</strong> Entidade Associativa</li>
+<li><strong>Descrição:</strong> Registra quais pedidos foram realizados por determinado cliente, Contendo o subtotal.</li>
+<li>
+<p><strong>Atributos de Ligação:</strong> <code>ID_Cliente (FK)</code> e <code>Código_Pedido (FK)</code></p>
+</li>
+<li>
+<p><strong>Pedido – Produto (via Tabela/Realacionamento "Contém")</strong></p>
+</li>
+<li><strong>Entidades Relacionadas:</strong> Pedido e Produto (ligadas através da entidade associativa Contém)</li>
+<li><strong>Tipo de Relacionamento:</strong> Entidade Associativa</li>
+<li><strong>Descrição:</strong> Associa os produtos que fazem parte de cada pedido e a respectiva quantidade de itens.</li>
+<li>
+<p><strong>Atributos de Ligação:</strong> <code>Código_Pedido (FK)</code> e <code>Código_Produto (FK)</code></p>
+</li>
+<li>
+<p><strong>Fornecedor – Compra</strong></p>
+</li>
+<li><strong>Entidades Relacionadas:</strong> Fornecedor e Compra</li>
+<li><strong>Tipo de Relacionamento:</strong> 1:N Entidade Forte/Entidade Fraca</li>
+<li><strong>Descrição:</strong> Registra as compras efetuadas junto a um fornecedor e o total gasto.</li>
+<li>
+<p><strong>Atributo de Ligação:</strong> <code>Id_fornecedor</code> (PK em Fornecedor e FK em Compra)</p>
+</li>
+<li>
+<p><strong>Compra – Produto</strong></p>
+</li>
+<li><strong>Entidades Relacionadas:</strong> Compra e Produto</li>
+<li><strong>Tipo de Relacionamento:</strong> Entidades Fortes/Entidade Fraca</li>
+<li><strong>Descrição:</strong> Associa as aquisições/compras efetuadas aos produtos do catálogo.</li>
+<li><strong>Atributo de Ligação:</strong> <code>Id_produto</code> / Associação entre as entradas de compra e o produto.</li>
+<li><strong>Produto – Estoque</strong></li>
+<li><strong>Entidades Relacionadas:</strong> Produto e Estoque</li>
+<li><strong>Tipo de Relacionamento:</strong> Relacionamento entre duas Entidades Fortes</li>
+<li><strong>Descrição:</strong> Associa as informações físicas de estoque e periodicidade de abastecimento ao produto correspondente.</li>
+<li><strong>Atributo de Ligação:</strong> <code>Id_produto</code> (PK em Estoque e FK/Referência em Produto)</li>
+</ul>
+<hr />
+<h2>14. Cardinalidades</h2>
+<ul>
+<li><strong>Pessoa -&gt; Cliente / Funcionário / Fornecedor:</strong> <code>(0,1)</code> para <code>(1,1)</code>. Uma pessoa pode ser cadastrada como cliente, funcionário ou fornecedor.</li>
+<li><strong>Cliente -&gt; Pedido ("Realiza"):</strong> <code>(0,N)</code> para <code>(1,1)</code>. Um cliente pode realizar zero ou vários pedidos, mas um pedido pertence a um único cliente.</li>
+<li><strong>Pedido -&gt; Produto ("Contém"):</strong> <code>(1,N)</code> para <code>(0,N)</code>. Um pedido contém pelo menos 1 produto e um produto pode estar contido em vários pedidos (Relacionamento N:M).</li>
+<li><strong>Fornecedor -&gt; Compra:</strong> <code>(0,N)</code> para <code>(1,1)</code>. Um fornecedor pode estar em várias compras, e cada compra está associada a 1 fornecedor.</li>
+<li><strong>Produto -&gt; Estoque:</strong> <code>(1,1)</code> para <code>(1,1)</code>. Cada produto cadastrado possui exatamente 1 registro de controle de estoque correspondente.</li>
+</ul>
+<hr />
+<h2>15. Diagrama Entidade-Relacionamento (DER)</h2>
+<p><img alt="Diagrama Entidade Relacionamento" src="img/DER.png" /></p>
+<hr />
+<h2>16 – Justificativas técnicas das principais decisões de modelagem</h2>
+<h3>1. Pessoa como entidade central de cadastro, com Cliente, Funcionário e Fornecedor como especializações</h3>
+<p>Observou que Cliente, Funcionário e Fornecedor possuem em comum os mesmos dados pessoais: <code>CPF</code>, <code>Nome</code>, <code>Email</code>, <code>Telefone</code> e <code>Data_Nascimento</code>. Por conta disso, optou por concentrar essas informações em uma única entidade, denominada <strong>Pessoa</strong>, de modo que cada papel passasse a armazenar somente os atributos que são próprios, como <code>Cargo</code> e <code>Salário</code>, no caso do Funcionário. O vínculo entre as entidades é estabelecido por meio do <code>CPF</code>, que atua como chave primária (<code>PK</code>) em <strong>Pessoa</strong> e como chave estrangeira (<code>FK</code>) nas outras. Essa solução evita a repetição de dados pessoais e permite que um mesmo indivíduo desempenhe mais de um papel no sistema sem a necessidade de ser cadastrado novamente.</p>
+<h3>2. Entidades associativas Contém e Realiza</h3>
+<p>Um pedido pode conter diversos produtos e, por outro lado, um mesmo produto pode figurar em vários pedidos, caracterizando um relacionamento muitos para muitos. Para resolver essa situação, criou a entidade associativa <strong>Contém</strong>, responsável por registrar a <code>Quantidade_De_Produtos</code> referente a cada item do pedido. Já a entidade <strong>Realiza</strong> estabelece a ligação entre o Cliente e o Pedido, armazenando o <code>Subtotal</code> da compra. Dessa forma, as informações da venda são devidamente registradas sem que haja duplicação de dados nas tabelas Pedido e Produto.</p>
+<h3>3. Separação entre Produto e Estoque</h3>
+<p>A entidade <strong>Produto</strong> reúne os dados estáveis do catálogo, isto é, <code>Descrição</code> e <code>Valor_Unitario</code>, ao passo que a entidade <strong>Estoque</strong> concentra as informações sujeitas a alterações frequentes, a saber, <code>Informação</code>, <code>Quantidade_De_Cada_Produto</code> e <code>Abastecimento</code>. Esta separação está alinhada à rotina da empresa, que realiza a conferência do estoque mensalmente e o reabastece de acordo com o volume de vendas. Assim, o saldo pode ser atualizado sem que seja necessário alterar o cadastro do produto. O relacionamento entre as duas entidades é do tipo 1 para 1, uma vez que cada produto possui exatamente um registro de estoque.</p>
+<h3>4. Código_Produto como chave primária de Produto</h3>
+<p>O <code>Código_Produto</code> foi definido como chave primária (<code>PK</code>) por identificar cada produto de maneira única, permitindo que as demais entidades façam referência a ele sem ambiguidade. Esse atributo é utilizado como chave estrangeira (<code>FK</code>) na entidade <strong>Contém</strong> e como chave primária e estrangeira (<code>PK/FK</code>) na entidade <strong>Estoque</strong>, o que assegura que somente existam itens de pedido e registros de estoque associados a produtos previamente cadastrados.</p>
+<hr />
+<h2>18. Conclusão</h2>
+<p>Esta entrega estabelece o Modelo Conceitual formal para a Personal Pisos, estruturando os requisitos coletados em entidades, atributos, relacionamentos e regras de negócio. O modelo atende às necessidades operacionais e de gestão da empresa e serve como base sólida para a próxima fase do projeto (Modelo Lógico, Normalização e DDL em Banco de Dados Relacional).</p>
+  </main>
+</body>
+</html>

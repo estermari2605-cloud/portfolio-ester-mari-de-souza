@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Controle financeiro pessoal com receitas, despesas, saldo e gráfico de gastos.">
+  <title>Finance Tracker</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Controle financeiro</h1>
+      <div class="period">
+        <label for="month-filter">Período</label>
+        <select id="month-filter"></select>
+      </div>
+    </header>
+
+    <!-- Resumo -->
+    <section class="balance-card" aria-label="Resumo financeiro">
+      <div class="balance-main">
+        <p id="balance-label" class="balance-label">Saldo total</p>
+        <p id="balance" class="balance-value">R$ 0,00</p>
+      </div>
+      <div class="balance-split">
+        <div>
+          <p class="split-label">Receitas</p>
+          <p id="total-income" class="split-value income">R$ 0,00</p>
+        </div>
+        <div>
+          <p class="split-label">Despesas</p>
+          <p id="total-expense" class="split-value expense">R$ 0,00</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="layout">
+      <!-- Formulário -->
+      <section class="card form-card" aria-labelledby="form-title">
+        <h2 id="form-title">Nova movimentação</h2>
+
+        <form id="transaction-form" novalidate>
+          <fieldset class="type-switch">
+            <legend class="visually-hidden">Tipo de movimentação</legend>
+            <input type="radio" id="type-expense" name="type" value="expense" checked>
+            <label for="type-expense">Despesa</label>
+            <input type="radio" id="type-income" name="type" value="income">
+            <label for="type-income">Receita</label>
+          </fieldset>
+
+          <div class="field">
+            <label for="description">Descrição</label>
+            <input id="description" type="text" maxlength="60" autocomplete="off" placeholder="Ex.: Mercado">
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="amount">Valor (R$)</label>
+              <input id="amount" type="number" min="0.01" step="0.01" inputmode="decimal" placeholder="0,00">
+            </div>
+            <div class="field">
+              <label for="date">Data</label>
+              <input id="date" type="date">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="category">Categoria</label>
+            <select id="category"></select>
+          </div>
+
+          <p id="form-error" class="error" role="alert" hidden></p>
+          <button type="submit" class="btn btn-primary">Adicionar movimentação</button>
+        </form>
+      </section>
+
+      <div class="column">
+        <!-- Gráfico -->
+        <section class="card" aria-labelledby="chart-title">
+          <h2 id="chart-title">Gastos por categoria</h2>
+          <div id="chart-empty" class="empty" hidden>Cadastre uma despesa para ver o gráfico.</div>
+          <div id="chart-content" class="chart-content">
+            <div class="donut">
+              <svg id="donut-svg" viewBox="0 0 42 42" role="img" aria-label="Gráfico de rosca com os gastos por categoria"></svg>
+              <div class="donut-center">
+                <span>Total gasto</span>
+                <strong id="donut-total">R$ 0,00</strong>
+              </div>
+            </div>
+            <ul id="legend" class="legend"></ul>
+          </div>
+        </section>
+
+        <!-- Histórico -->
+        <section class="card" aria-labelledby="history-title">
+          <div class="history-head">
+            <h2 id="history-title">Histórico</h2>
+            <div class="filters" role="group" aria-label="Filtrar movimentações">
+              <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">Tudo</button>
+              <button type="button" class="filter" data-filter="income" aria-pressed="false">Receitas</button>
+              <button type="button" class="filter" data-filter="expense" aria-pressed="false">Despesas</button>
+            </div>
+          </div>
+          <ul id="history" class="history"></ul>
+          <p id="history-empty" class="empty" hidden></p>
+        </section>
+      </div>
+    </div>
+
+    <footer class="app-footer">Os dados ficam salvos no seu navegador (localStorage).</footer>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

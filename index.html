@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ester Mari · Estudante de Engenharia de Software</title>
+  <meta name="description" content="Portfólio de Ester Mari, estudante de Engenharia de Software: projetos em HTML, CSS, JavaScript e Bootstrap.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header class="nav">
+    <a class="marca" href="#inicio" aria-label="Ester Mari, início">EM</a>
+    <button class="menu-btn" id="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav id="menu" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#formacao">Formação</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="ola">Olá, eu sou</p>
+          <h1>Ester Mari</h1>
+          <p class="lead">Estudante de Engenharia de Software construindo, projeto a projeto, o caminho para uma carreira em Tecnologia da Informação.</p>
+          <div class="acoes">
+            <a class="btn cheio" href="#projetos">Ver projetos</a>
+            <a class="btn vazio" href="#contato">Falar comigo</a>
+          </div>
+        </div>
+        <pre class="codigo" aria-hidden="true"><code><span class="c">// perfil.js</span>
+const ester = {
+  curso: "Engenharia de Software",
+  semestre: 1,
+  foco: ["Front-end", "Lógica", "Boas práticas"],
+  aprendendo: true
+};</code></pre>
+      </div>
+    </section>
+
+    <section class="secao" id="sobre">
+      <div class="wrap duas">
+        <h2>Sobre mim</h2>
+        <div class="texto">
+          <p>Estou no 1º semestre de Engenharia de Software e gosto de transformar ideias em páginas e programas que funcionam de verdade. Cada exercício da faculdade é uma chance de praticar organização de código, design e lógica.</p>
+          <p>Meu objetivo é desenvolver projetos cada vez mais completos e crescer profissionalmente na área de Tecnologia da Informação.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao alt" id="habilidades">
+      <div class="wrap">
+        <h2>Habilidades técnicas</h2>
+        <div class="grade-hab">
+          <div><h3>Desenvolvimento web</h3><ul class="chips"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Bootstrap 5</li><li>Design responsivo</li></ul></div>
+          <div><h3>Ferramentas</h3><ul class="chips"><li>Linguagem C</li><li>Git</li><li>GitHub</li><li>GitHub Pages</li><li>VS Code</li></ul></div>
+          <div><h3>Fundamentos</h3><ul class="chips"><li>Lógica de programação</li><li>Modelagem de banco de dados</li><li>Acessibilidade</li><li>Organização de código</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" id="projetos">
+      <div class="wrap">
+        <h2>Meus projetos</h2>
+        <div class="cards">
+          <article class="card">
+            <img src="img/preview-imc.svg" alt="Prévia da calculadora de IMC com campos de peso e altura e escala colorida" width="800" height="500" loading="lazy">
+            <div class="card-corpo">
+              <h3>Calculadora de IMC</h3>
+              <p>Calcula o Índice de Massa Corporal, valida os dados e mostra a classificação em uma escala visual.</p>
+              <ul class="chips pequeno"><li>HTML5</li><li>CSS3</li><li>JavaScript</li></ul>
+              <div class="card-acoes"><a class="btn cheio" href="projetos/calculadora-imc/index.html">Visualizar projeto</a></div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="img/preview-astronomia.svg" alt="Prévia do site de astronomia com Saturno sobre fundo estrelado" width="800" height="500" loading="lazy">
+            <div class="card-corpo">
+              <h3>Astronomia e Exploração Espacial</h3>
+              <p>Site de cinco páginas sobre o universo e o sistema solar, com galeria, tabela de dados e formulário.</p>
+              <ul class="chips pequeno"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Bootstrap 5</li></ul>
+              <div class="card-acoes"><a class="btn cheio" href="projetos/astronomia/index.html">Visualizar projeto</a></div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="img/preview-task-manager.jpg" alt="Tela do Task Manager com lista de tarefas e filtros" width="800" height="500" loading="lazy">
+            <div class="card-corpo">
+              <h3>Task Manager</h3>
+              <p>Organizador de tarefas com prioridade, prazo, filtros por status e dados salvos no navegador.</p>
+              <ul class="chips pequeno"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>localStorage</li></ul>
+              <div class="card-acoes"><a class="btn cheio" href="projetos/task-manager/index.html">Visualizar projeto</a><a class="link-codigo" href="https://github.com/estermari2605-cloud/task-manager" target="_blank" rel="noopener">Ver código</a></div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="img/preview-finance-tracker.jpg" alt="Tela do Finance Tracker com saldo, histórico e gráfico de gastos" width="800" height="500" loading="lazy">
+            <div class="card-corpo">
+              <h3>Finance Tracker</h3>
+              <p>Controle financeiro pessoal com saldo automático, filtros por mês e gráfico de gastos por categoria.</p>
+              <ul class="chips pequeno"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>SVG</li><li>localStorage</li></ul>
+              <div class="card-acoes"><a class="btn cheio" href="projetos/finance-tracker/index.html">Visualizar projeto</a><a class="link-codigo" href="https://github.com/estermari2605-cloud/finance-tracker" target="_blank" rel="noopener">Ver código</a></div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="img/preview-conexao-real.jpg" alt="Página inicial do site Conexão Real" width="800" height="500" loading="lazy">
+            <div class="card-corpo">
+              <h3>Conexão Real</h3>
+              <p>Site sobre o impacto da comunicação digital nas relações, com tema claro e escuro e recursos interativos.</p>
+              <ul class="chips pequeno"><li>HTML5</li><li>CSS3</li><li>Bootstrap</li><li>JavaScript</li></ul>
+              <div class="card-acoes"><a class="btn cheio" href="projetos/conexao-real/index.html">Visualizar projeto</a></div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="img/preview-erp.jpg" alt="Diagrama Entidade-Relacionamento do projeto ERP da Personal Pisos" width="800" height="500" loading="lazy">
+            <div class="card-corpo">
+              <h3>Projeto ERP · Personal Pisos</h3>
+              <p>Levantamento de processos e requisitos e modelagem de banco de dados para uma empresa de pisos e decoração.</p>
+              <ul class="chips pequeno"><li>Modelagem de dados</li><li>DER</li><li>Documentação</li></ul>
+              <div class="card-acoes"><a class="btn cheio" href="projetos/erp-personal-pisos/index.html">Visualizar projeto</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao alt" id="formacao">
+      <div class="wrap duas">
+        <h2>Formação acadêmica</h2>
+        <div class="texto">
+          <p class="destaque">Engenharia de Software</p>
+          <p>UNICID · Graduação em andamento · 1º semestre</p>
+          <p>Disciplinas iniciais de lógica, desenvolvimento web e fundamentos de computação.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" id="contato">
+      <div class="wrap duas">
+        <h2>Contato</h2>
+        <div class="texto">
+          <p>Quer conversar sobre projetos ou oportunidades? Me escreva ou veja meu código.</p>
+          <ul class="links">
+            <li><a href="https://github.com/estermari2605-cloud" target="_blank" rel="noopener">GitHub: estermari2605-cloud</a></li>
+            <li><a href="https://www.linkedin.com/in/estermari" target="_blank" rel="noopener">LinkedIn: estermari</a></li>
+            <li><a href="mailto:estermari2605@gmail.com">estermari2605@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="wrap"><p>© <span id="ano">2026</span> Ester Mari · Engenharia de Software</p></div>
+  </footer>
+
+  <script>
+    var btn = document.getElementById("menu-btn"), menu = document.getElementById("menu");
+    btn.addEventListener("click", function () {
+      var aberto = menu.classList.toggle("aberto");
+      btn.setAttribute("aria-expanded", aberto);
+    });
+    menu.addEventListener("click", function () { menu.classList.remove("aberto"); btn.setAttribute("aria-expanded", false); });
+    document.getElementById("ano").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

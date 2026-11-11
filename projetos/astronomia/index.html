@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Início · Astronomia e Exploração Espacial</title>
+  <meta name="description" content="Site sobre astronomia e exploração espacial: universo, sistema solar, planetas e descobertas.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="visually-hidden-focusable skip" href="#conteudo">Pular para o conteúdo</a>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" aria-label="Navegação principal">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Cosmos</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu de navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto"><li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Início</a></li><li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li><li class="nav-item"><a class="nav-link" href="galeria.html">Galeria</a></li><li class="nav-item"><a class="nav-link" href="dados.html">Dados</a></li><li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+            <li class="nav-item"><a class="nav-link nav-portfolio" href="../../index.html">← Portfólio</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main id="conteudo">
+    <section class="hero" aria-labelledby="titulo">
+      <div class="container">
+        <p class="hero-kicker">Astronomia e Exploração Espacial</p>
+        <h1 id="titulo">O universo tem 13,8 bilhões de anos. Vamos explorar.</h1>
+        <p class="lead">Do Sol aos confins do cosmos: planetas, missões e descobertas que mudaram a forma como entendemos o nosso lugar no espaço.</p>
+        <div class="d-flex flex-wrap gap-2">
+          <a class="btn btn-primary btn-lg" href="galeria.html">Ver planetas</a>
+          <a class="btn btn-outline-light btn-lg" href="sobre.html">Conhecer a história</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5" aria-label="Carrossel de imagens">
+      <div class="container">
+        <div id="carrossel" class="carousel slide" data-bs-ride="carousel" aria-label="Imagens do espaço">
+          <div class="carousel-indicators"><button type="button" data-bs-target="#carrossel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button><button type="button" data-bs-target="#carrossel" data-bs-slide-to="1" aria-label="Slide 2"></button><button type="button" data-bs-target="#carrossel" data-bs-slide-to="2" aria-label="Slide 3"></button></div>
+          <div class="carousel-inner"><div class="carousel-item active"><img src="img/nebulosa.svg" class="d-block w-100" alt="Ilustração: Nebulosas: berçários de estrelas" loading="eager"><div class="carousel-caption"><h3>Nebulosas: berçários de estrelas</h3><p class="d-none d-sm-block">Nuvens de gás e poeira onde novas estrelas nascem.</p></div></div><div class="carousel-item"><img src="img/galaxia.svg" class="d-block w-100" alt="Ilustração: Galáxias: ilhas de estrelas" loading="lazy"><div class="carousel-caption"><h3>Galáxias: ilhas de estrelas</h3><p class="d-none d-sm-block">A Via Láctea é uma entre centenas de bilhões de galáxias.</p></div></div><div class="carousel-item"><img src="img/sistema-solar.svg" class="d-block w-100" alt="Ilustração: O sistema solar" loading="lazy"><div class="carousel-caption"><h3>O sistema solar</h3><p class="d-none d-sm-block">Oito planetas giram em torno do Sol há 4,6 bilhões de anos.</p></div></div></div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carrossel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Anterior</span></button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carrossel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Próximo</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5" aria-labelledby="intro">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-12 col-md-6">
+            <h2 id="intro">O que é astronomia?</h2>
+            <p>Astronomia é a ciência que estuda os astros e o universo: estrelas, planetas, galáxias, buracos negros e a própria origem do cosmos. É uma das ciências mais antigas da humanidade.</p>
+            <p>Hoje, telescópios no solo e no espaço, sondas e satélites revelam detalhes que antes eram impossíveis de imaginar.</p>
+          </div>
+          <div class="col-12 col-md-6"><img class="img-fluid rounded-4" src="img/galaxia.svg" alt="Ilustração de uma galáxia espiral vista de lado" width="800" height="500" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5" aria-labelledby="explorar">
+      <div class="container">
+        <h2 id="explorar" class="mb-4">Explore o site</h2>
+        <div class="row g-4"><div class="col-12 col-sm-6 col-lg-3"><article class="card h-100"><img src="img/sistema-solar.svg" class="card-img-top" alt="" loading="lazy"><div class="card-body d-flex flex-column"><h3 class="h5 card-title">Sobre astronomia</h3><p class="card-text">Da observação a olho nu aos telescópios espaciais: veja como a ciência do céu evoluiu.</p><a class="btn btn-primary mt-auto" href="sobre.html" aria-label="Ir para a página Sobre astronomia">Acessar</a></div></article></div><div class="col-12 col-sm-6 col-lg-3"><article class="card h-100"><img src="img/saturno.svg" class="card-img-top" alt="" loading="lazy"><div class="card-body d-flex flex-column"><h3 class="h5 card-title">Galeria espacial</h3><p class="card-text">Conheça o Sol e os oito planetas em cards com informações extras.</p><a class="btn btn-primary mt-auto" href="galeria.html" aria-label="Ir para a página Galeria espacial">Acessar</a></div></article></div><div class="col-12 col-sm-6 col-lg-3"><article class="card h-100"><img src="img/jupiter.svg" class="card-img-top" alt="" loading="lazy"><div class="card-body d-flex flex-column"><h3 class="h5 card-title">Dados e curiosidades</h3><p class="card-text">Tabela comparativa, curiosidades científicas e perguntas frequentes.</p><a class="btn btn-primary mt-auto" href="dados.html" aria-label="Ir para a página Dados e curiosidades">Acessar</a></div></article></div><div class="col-12 col-sm-6 col-lg-3"><article class="card h-100"><img src="img/terra.svg" class="card-img-top" alt="" loading="lazy"><div class="card-body d-flex flex-column"><h3 class="h5 card-title">Contato e feedback</h3><p class="card-text">Envie uma dúvida, sugestão ou comentário sobre o site.</p><a class="btn btn-primary mt-auto" href="contato.html" aria-label="Ir para a página Contato e feedback">Acessar</a></div></article></div></div>
+      </div>
+    </section>
+  </main>
+  <footer class="rodape" role="contentinfo">
+    <div class="container py-4 d-flex flex-column flex-md-row justify-content-between gap-2">
+      <p class="mb-0">Astronomia e Exploração Espacial · projeto acadêmico de Ester Mari</p>
+      <p class="mb-0"><a href="../../index.html">Voltar ao portfólio</a></p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
